@@ -13,7 +13,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build exe
-        run: npm run build
+        # ここを修正しました（--publish never を追加）
+        run: npx electron-builder --win --x64 --publish never
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
